@@ -1,10 +1,14 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using JwtWebAPITutorial.Entities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using PdfSharpCore;
+using PdfSharpCore.Pdf;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net.NetworkInformation;
 using System.Security.Claims;
 using System.Security.Cryptography;
+using TheArtOfDev.HtmlRenderer.PdfSharp;
 
 namespace JwtWebAPITutorial.Controllers
 {
@@ -12,7 +16,7 @@ namespace JwtWebAPITutorial.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        public static User user = new User();
+        public static UserS user = new UserS();
         private readonly IConfiguration _configuration;
 
         public AuthController(IConfiguration configuration)
@@ -21,7 +25,7 @@ namespace JwtWebAPITutorial.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<User>> Register(UserDto request)
+        public async Task<ActionResult<UserS>> Register(UserDto request)
         {
             CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
 
@@ -47,7 +51,23 @@ namespace JwtWebAPITutorial.Controllers
             return Ok(token);
         }
 
-        private string CreateToken(User user)
+        [HttpGet("generatePDF")]
+        public async Task<IActionResult> GeneratePDF(string contractNo)
+        {
+            var document = new PdfDocument();
+            string HtmlContent = "<h1> Hợp đồng thuê </h1>";
+            PdfGenerator.AddPdfPages(document, HtmlContent, PageSize.A4);
+            byte[]? response = null;
+            using(MemoryStream ms = new MemoryStream())
+            {
+                document.Save(ms);
+                response = ms.ToArray();
+            }
+            string fileName = "Contract_ " + contractNo+ ".pdf";
+            return File(response, "application/pdf", fileName);
+        }
+
+        private string CreateToken(UserS user)
         {
             List<Claim> claims = new List<Claim>
             {
