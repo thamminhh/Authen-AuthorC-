@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/wwwroot/books/cover/316c8474-57a3-4a53-802b-8f2be5b0675a_EBEE4B46-ACB5-4C49-899C-5C45A3A35FC5.jpeg",
+      "PackagePath": "staticwebassets/books/cover/316c8474-57a3-4a53-802b-8f2be5b0675a_EBEE4B46-ACB5-4C49-899C-5C45A3A35FC5.jpeg"
+    },
+    {
+      "Id": "/Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/wwwroot/books/cover/72254D22-2D10-4EE3-944E-F8EA4966C1F1.jpeg723cff45-682e-4fb8-b189-40cc968b6ed8",
+      "PackagePath": "staticwebassets/books/cover/72254D22-2D10-4EE3-944E-F8EA4966C1F1.jpeg723cff45-682e-4fb8-b189-40cc968b6ed8"
+    },
+    {
+      "Id": "/Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/wwwroot/books/cover/b9fd3a22-2b93-43b0-a1a9-48e340e2e3cc_058F6018-74D3-4E1B-A651-A88D6D44D3F6.jpeg",
+      "PackagePath": "staticwebassets/books/cover/b9fd3a22-2b93-43b0-a1a9-48e340e2e3cc_058F6018-74D3-4E1B-A651-A88D6D44D3F6.jpeg"
+    },
+    {
+      "Id": "/Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/wwwroot/books/cover/c45d2bac-6934-49d1-a9b2-a607b8d96202_8FE9CC32-86DB-4846-82A5-616B065E7073.jpeg",
+      "PackagePath": "staticwebassets/books/cover/c45d2bac-6934-49d1-a9b2-a607b8d96202_8FE9CC32-86DB-4846-82A5-616B065E7073.jpeg"
+    },
+    {
+      "Id": "/Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/wwwroot/books/cover/d2473a43-94d3-4543-ac9e-78048d14f5b2_18EB2BB9-4F34-448D-972A-A3447864D318.jpeg",
+      "PackagePath": "staticwebassets/books/cover/d2473a43-94d3-4543-ac9e-78048d14f5b2_18EB2BB9-4F34-448D-972A-A3447864D318.jpeg"
+    },
+    {
+      "Id": "obj/Debug/net6.0/staticwebassets/msbuild.JwtWebAPITutorial.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net6.0/staticwebassets/msbuild.build.JwtWebAPITutorial.props",
+      "PackagePath": "build\\JwtWebAPITutorial.props"
+    },
+    {
+      "Id": "obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.JwtWebAPITutorial.props",
+      "PackagePath": "buildMultiTargeting\\JwtWebAPITutorial.props"
+    },
+    {
+      "Id": "obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.JwtWebAPITutorial.props",
+      "PackagePath": "buildTransitive\\JwtWebAPITutorial.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

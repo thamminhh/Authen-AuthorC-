@@ -20,13 +20,16 @@ namespace JwtWebAPITutorial.Controllers
     {
         public static User user = new User();
         private readonly IUserRepository _userRepository;
+        private readonly IWebHostEnvironment _webHostEnvironment;
         //private readonly IConfiguration _configuration;
 
-        public AuthController(IUserRepository userRepository)
+        public AuthController(IUserRepository userRepository,
+            IWebHostEnvironment webHostEnvironment)
             //IConfiguration configuration
         {
             //_configuration = configuration;
             _userRepository = userRepository;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         [HttpPost("register")]
@@ -97,6 +100,25 @@ namespace JwtWebAPITutorial.Controllers
             }
             string fileName = "Contract_ " + contractNo+ ".pdf";
             return File(response, "application/pdf", fileName);
+        }
+        [HttpPost("UploadImage")]
+        public async Task<IActionResult> UploadImage(IFormFile file)
+        {
+            var url = "";
+            if(file!= null)
+            {
+                string folder = "books/cover/";
+                folder += Guid.NewGuid().ToString() + "_" +file.FileName ;
+
+                 url = "/"+ folder;
+                string serverFolfer = Path.Combine(_webHostEnvironment.WebRootPath, folder);
+
+                await file.CopyToAsync(new FileStream(serverFolfer, FileMode.Create)); ;
+
+            }
+            
+            // we can put rest of upload logic here.
+            return Ok(url);
         }
 
         //private string CreateToken(User user)

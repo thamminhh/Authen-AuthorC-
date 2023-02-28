@@ -1,11 +1,105 @@
 {
   "Version": 1,
-  "Hash": "gVl5lYgg/1UWnWYB0vCAPvxKjboQbvfOok4tddu7yUQ=",
+  "Hash": "TKeivj/07nV2SeDbtBRfdQa1rthKnxhXzRucBF+91nk=",
   "Source": "JwtWebAPITutorial",
   "BasePath": "_content/JwtWebAPITutorial",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "JwtWebAPITutorial/wwwroot",
+      "Source": "JwtWebAPITutorial",
+      "ContentRoot": "/Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/wwwroot/",
+      "BasePath": "_content/JwtWebAPITutorial",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/wwwroot/books/cover/316c8474-57a3-4a53-802b-8f2be5b0675a_EBEE4B46-ACB5-4C49-899C-5C45A3A35FC5.jpeg",
+      "SourceId": "JwtWebAPITutorial",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/wwwroot/",
+      "BasePath": "_content/JwtWebAPITutorial",
+      "RelativePath": "books/cover/316c8474-57a3-4a53-802b-8f2be5b0675a_EBEE4B46-ACB5-4C49-899C-5C45A3A35FC5.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/books/cover/316c8474-57a3-4a53-802b-8f2be5b0675a_EBEE4B46-ACB5-4C49-899C-5C45A3A35FC5.jpeg"
+    },
+    {
+      "Identity": "/Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/wwwroot/books/cover/72254D22-2D10-4EE3-944E-F8EA4966C1F1.jpeg723cff45-682e-4fb8-b189-40cc968b6ed8",
+      "SourceId": "JwtWebAPITutorial",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/wwwroot/",
+      "BasePath": "_content/JwtWebAPITutorial",
+      "RelativePath": "books/cover/72254D22-2D10-4EE3-944E-F8EA4966C1F1.jpeg723cff45-682e-4fb8-b189-40cc968b6ed8",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/books/cover/72254D22-2D10-4EE3-944E-F8EA4966C1F1.jpeg723cff45-682e-4fb8-b189-40cc968b6ed8"
+    },
+    {
+      "Identity": "/Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/wwwroot/books/cover/b9fd3a22-2b93-43b0-a1a9-48e340e2e3cc_058F6018-74D3-4E1B-A651-A88D6D44D3F6.jpeg",
+      "SourceId": "JwtWebAPITutorial",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/wwwroot/",
+      "BasePath": "_content/JwtWebAPITutorial",
+      "RelativePath": "books/cover/b9fd3a22-2b93-43b0-a1a9-48e340e2e3cc_058F6018-74D3-4E1B-A651-A88D6D44D3F6.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/books/cover/b9fd3a22-2b93-43b0-a1a9-48e340e2e3cc_058F6018-74D3-4E1B-A651-A88D6D44D3F6.jpeg"
+    },
+    {
+      "Identity": "/Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/wwwroot/books/cover/c45d2bac-6934-49d1-a9b2-a607b8d96202_8FE9CC32-86DB-4846-82A5-616B065E7073.jpeg",
+      "SourceId": "JwtWebAPITutorial",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/wwwroot/",
+      "BasePath": "_content/JwtWebAPITutorial",
+      "RelativePath": "books/cover/c45d2bac-6934-49d1-a9b2-a607b8d96202_8FE9CC32-86DB-4846-82A5-616B065E7073.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/books/cover/c45d2bac-6934-49d1-a9b2-a607b8d96202_8FE9CC32-86DB-4846-82A5-616B065E7073.jpeg"
+    },
+    {
+      "Identity": "/Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/wwwroot/books/cover/d2473a43-94d3-4543-ac9e-78048d14f5b2_18EB2BB9-4F34-448D-972A-A3447864D318.jpeg",
+      "SourceId": "JwtWebAPITutorial",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/wwwroot/",
+      "BasePath": "_content/JwtWebAPITutorial",
+      "RelativePath": "books/cover/d2473a43-94d3-4543-ac9e-78048d14f5b2_18EB2BB9-4F34-448D-972A-A3447864D318.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/books/cover/d2473a43-94d3-4543-ac9e-78048d14f5b2_18EB2BB9-4F34-448D-972A-A3447864D318.jpeg"
+    }
+  ]
 }

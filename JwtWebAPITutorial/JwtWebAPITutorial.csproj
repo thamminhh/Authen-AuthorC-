@@ -26,5 +26,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Constant\" />
+    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\books\" />
+    <Folder Include="wwwroot\books\cover\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\" />
+    <Content Remove="wwwroot\books\" />
+    <Content Remove="wwwroot\books\cover\" />
   </ItemGroup>
 </Project>

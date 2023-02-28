@@ -285,6 +285,7 @@ D:/Documents/ASP.net/JwtWebAPITutorial/JwtWebAPITutorial/bin/Debug/net6.0/SixLab
 D:/Documents/ASP.net/JwtWebAPITutorial/JwtWebAPITutorial/bin/Debug/net6.0/SixLabors.ImageSharp.dll
 /Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/bin/Debug/net6.0/appsettings.Development.json
 /Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/bin/Debug/net6.0/appsettings.json
+/Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/bin/Debug/net6.0/JwtWebAPITutorial.staticwebassets.runtime.json
 /Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/bin/Debug/net6.0/JwtWebAPITutorial
 /Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/bin/Debug/net6.0/JwtWebAPITutorial.deps.json
 /Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/bin/Debug/net6.0/JwtWebAPITutorial.runtimeconfig.json
