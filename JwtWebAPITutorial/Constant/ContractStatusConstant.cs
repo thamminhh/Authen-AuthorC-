@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.Application.Constant;
+﻿namespace JwtWebAPITutorial.Constant;
 public class ContractStatusConstant
 {
     public const int ContractExporting  = 1; //"Hợp đồng đang chờ kí"

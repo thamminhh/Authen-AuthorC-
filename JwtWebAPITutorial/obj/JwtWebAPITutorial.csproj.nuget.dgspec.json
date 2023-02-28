@@ -1,28 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documents\\ASP.net\\JwtWebAPITutorial\\JwtWebAPITutorial\\JwtWebAPITutorial.csproj": {}
+    "/Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/JwtWebAPITutorial.csproj": {}
   },
   "projects": {
-    "D:\\Documents\\ASP.net\\JwtWebAPITutorial\\JwtWebAPITutorial\\JwtWebAPITutorial.csproj": {
+    "/Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/JwtWebAPITutorial.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\ASP.net\\JwtWebAPITutorial\\JwtWebAPITutorial\\JwtWebAPITutorial.csproj",
+        "projectUniqueName": "/Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/JwtWebAPITutorial.csproj",
         "projectName": "JwtWebAPITutorial",
-        "projectPath": "D:\\Documents\\ASP.net\\JwtWebAPITutorial\\JwtWebAPITutorial\\JwtWebAPITutorial.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\ASP.net\\JwtWebAPITutorial\\JwtWebAPITutorial\\obj\\",
+        "projectPath": "/Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/JwtWebAPITutorial.csproj",
+        "packagesPath": "/Users/thamquangminh/.nuget/packages/",
+        "outputPath": "/Users/thamquangminh/Documents/c#.netapi/Authen-AuthorC-/JwtWebAPITutorial/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/thamquangminh/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -98,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.200/RuntimeIdentifierGraph.json"
         }
       }
     }

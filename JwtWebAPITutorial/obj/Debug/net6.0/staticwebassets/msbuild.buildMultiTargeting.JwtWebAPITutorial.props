@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="..\build\JwtWebAPITutorial.props" />
+  <Import Project="../build/JwtWebAPITutorial.props" />
 </Project>

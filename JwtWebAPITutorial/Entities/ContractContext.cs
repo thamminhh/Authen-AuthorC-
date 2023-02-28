@@ -744,6 +744,10 @@ namespace JwtWebAPITutorial.Entities
 
                 entity.Property(e => e.Password).HasMaxLength(255);
 
+                entity.Property(e => e.PasswordHash).HasMaxLength(1);
+
+                entity.Property(e => e.PasswordSalt).HasMaxLength(1);
+
                 entity.Property(e => e.PhoneNumber).HasMaxLength(15);
 
                 entity.Property(e => e.Role).HasMaxLength(255);

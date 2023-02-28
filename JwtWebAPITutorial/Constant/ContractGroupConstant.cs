@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.Application.Constant;
+﻿namespace JwtWebAPITutorial.Constant;
 public class ContractGroupConstant
 {
     public const int ContractGroupNotExpertised  = 1; //"Nhóm hợp đồng chưa được thẩm định!"

@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.Application.Constant;
+﻿namespace JwtWebAPITutorial.Constant;
 public class CarStatusConstants
 {
     public const int Expertising         = 1; // "Đang thẩm định"

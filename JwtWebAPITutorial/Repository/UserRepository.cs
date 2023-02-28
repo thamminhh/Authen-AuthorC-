@@ -2,21 +2,68 @@
 using JwtWebAPITutorial.Interface;
 using JwtWebAPITutorial.Entities_SubModel.User;
 using JwtWebAPITutorial.Entities_SubModel.User.SubModel;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Security.Cryptography;
 
 namespace JwtWebAPITutorial.Repository
 {
     public class UserRepository : IUserRepository
     {
         private readonly ContractContext _contractContext;
+        private readonly IConfiguration _configuration;
 
-        public UserRepository(ContractContext contractContext)
+        public UserRepository(ContractContext contractContext, IConfiguration configuration)
         {
             _contractContext = contractContext;
+            _configuration = configuration;
         }
 
         private static string NormalizeEmail(string email)
         {
             return email.Trim().ToUpper();
+        }
+
+        public string CreateToken(string email)
+        {
+            var user = GetUserByEmail(email);
+            List<Claim> claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Role, user.Role)
+            };
+            var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(
+                _configuration.GetSection("AppSettings:Token").Value));
+
+            var cred = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
+
+            var token = new JwtSecurityToken(
+                claims: claims,
+                expires: DateTime.Now.AddDays(1),
+                signingCredentials: cred);
+
+            var jwt = new JwtSecurityTokenHandler().WriteToken(token);
+
+            return jwt;
+        }
+
+        public void CreatePasswordHash(string? password, out byte[]? passwordHash, out byte[]? passwordSalt)
+        {
+            using (var hmac = new HMACSHA512())
+            {
+                passwordSalt = hmac.Key;
+                passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+            }
+        }
+
+        public bool VerifyPasswordHash(string? password, byte[]? passwordHash, byte[]? passwordSalt)
+        {
+            using (var hmac = new HMACSHA512(passwordSalt))
+            {
+                var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+                return computedHash.SequenceEqual(passwordHash);
+            }
         }
 
         public int GetNumberOfUsers()
@@ -27,11 +74,6 @@ namespace JwtWebAPITutorial.Repository
         public User GetUserById(int id)
         {
             return _contractContext.Users.Where(u => u.Id == id).FirstOrDefault();
-        }
-
-        public User GetUserByName(string name)
-        {
-            throw new NotImplementedException();
         }
 
         public ICollection<User> GetUsers(int page, int pageSize, UserFilter filter)
@@ -110,7 +152,7 @@ namespace JwtWebAPITutorial.Repository
                     errorMessage = "User with this passport number already exists";
                     return false;
                 }
-        }
+            }
 
             var user = new User();
             user.Name = userCreate.Name;
@@ -118,7 +160,11 @@ namespace JwtWebAPITutorial.Repository
             user.Job = userCreate.Job;
             user.CurrentAddress = userCreate.CurrentAddress;
             user.Email = userCreate.Email;
-            user.Password = userCreate.Password;
+
+            CreatePasswordHash(userCreate.Password, out byte[] passwordHash, out byte[] passwordSalt);
+            user.PasswordHash = passwordHash;
+            user.PasswordSalt = passwordSalt;
+
             user.Role = userCreate.Role;
             user.CitizenIdentificationInfoNumber = userCreate.CitizenIdentificationInfoNumber;
             user.CitizenIdentificationInfoAddress = userCreate.CitizenIdentificationInfoAddress;
@@ -145,6 +191,34 @@ namespace JwtWebAPITutorial.Repository
             user.Role = request.Role; 
        
             return Save();
+        }
+
+        public bool Login(LoginModel request, out string errorMessage)
+        {
+            errorMessage = string.Empty;
+            if (!EmailExit(request.UserName))
+            {
+                errorMessage = "User not found";
+                return false;
+            }
+            var user = GetUserByEmail(request.UserName);
+            if (!VerifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
+            {
+                errorMessage = "Password incorect";
+                return false;
+            }
+            
+            return true;
+        }
+
+        public bool EmailExit(string email)
+        {
+            return _contractContext.Users.Any(u => u.Email == email);
+        }
+
+        public User GetUserByEmail(string email)
+        {
+            return _contractContext.Users.Where(u => u.Email == email).FirstOrDefault();
         }
 
         //public bool UpdateUserRole(int id, string role)

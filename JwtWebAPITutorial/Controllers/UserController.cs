@@ -7,6 +7,7 @@ using JwtWebAPITutorial.Endpoints;
 using JwtWebAPITutorial.Entities_SubModel.User.SubModel;
 using Microsoft.AspNetCore.Authorization;
 using System.Data;
+using JwtWebAPITutorial.Constant;
 
 namespace CarContractVer2.Controllers
 {
@@ -24,7 +25,7 @@ namespace CarContractVer2.Controllers
         }
 
 
-        [HttpGet, Authorize(Roles = "Admin")]
+        [HttpGet, Authorize(Roles = UserRoleConstant.Admin + "," + UserRoleConstant.Expertise)]
         [Route(UserEndpoints.GetAll)]
         [ProducesResponseType(200, Type = typeof(IEnumerable<User>))]
         public IActionResult GetUsers([FromQuery] UserFilter filter, int page = 1, int pageSize = 10)
@@ -36,7 +37,7 @@ namespace CarContractVer2.Controllers
             return Ok(new { users = listUser, total = toalCount });
         }
 
-        [HttpGet, Authorize(Roles = "Admin")]
+        [HttpGet, Authorize(Roles = UserRoleConstant.Admin)]
         [Route(UserEndpoints.GetSingle)]
         [ProducesResponseType(200, Type = typeof(IEnumerable<User>))]
         public IActionResult GetUserById(int id)
@@ -48,28 +49,6 @@ namespace CarContractVer2.Controllers
                 return BadRequest(ModelState);
             return Ok(user);
         }
-
-        //[HttpPut("/api/users/{id}/role")]
-        //public async Task<IActionResult> UpdateUserRole(int id, [FromBody] User updateUser)
-        //{
-        //    // Validate the request
-        //    if (updateUser == null)
-        //        return BadRequest(ModelState);
-
-        //    if (!_userRepository.UserExit(id))
-        //        return NotFound();
-
-        //    if (!ModelState.IsValid)
-        //        return BadRequest(ModelState);
-        //    if (!_userRepository.UpdateUser(updateUser))
-        //    {
-        //        ModelState.AddModelError("", "Something went wrong");
-        //        return StatusCode(500, ModelState);
-        //    }
-        //    return NoContent();
-        //}
-
-
 
         [HttpPost]
         [Route(UserEndpoints.Create)]
@@ -93,31 +72,6 @@ namespace CarContractVer2.Controllers
 
             return Ok("Successfully Added");
         }
-        //public IActionResult CreateUser([FromBody] CreateUserModel userCreate)
-        //{
-        //    if (userCreate == null)
-        //        return BadRequest(ModelState);
-
-        //    var user = _userRepository.GetUsers()
-        //        .Where(c => c.Name.Trim().ToUpper() == userCreate.Name.TrimEnd().ToUpper())
-        //        .FirstOrDefault();
-        //    if (user != null)
-        //    {
-        //        ModelState.AddModelError("", "User Already Exist!!!");
-        //        return StatusCode(422, ModelState);
-        //    }
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-        //    if (!_userRepository.CreateUser(userCreate))
-        //    {
-        //        ModelState.AddModelError("", "Something went wrong while saving");
-        //        return StatusCode(500, ModelState);
-        //    }
-        //    return Ok("Successfully Added");
-        //}
-
         [HttpPut]
         [Route(UserEndpoints.UpdateRole)]
         public async Task<IActionResult> UpdateUserRole([FromRoute] int id, [FromBody] UpdateUserRoleModel model)
